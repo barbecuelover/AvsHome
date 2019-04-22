@@ -1,0 +1,13 @@
+{
+  "config": {
+    "clientId": "amzn1.application-oa2-client.7a5957554a98439bafba41664d5251a1",
+    "clientSecret": "1cb7fdc7369fdda9f75687f24cbf7d72bb392efde3e384c0f2fccad9620670cc",
+    "productId" : "avshome",
+    "productDsn" : "<YOUR DEVICE'S PRODUCT DSN>"
+  },
+  "metrics" : {
+    "metricsEnabled" : false,
+    "amazonId" : "A2S2BO44DOJ969",
+    "stage" : "<YOUR STAGING ENVIRONMENT: Beta, Gamma, Prod>"
+  }
+}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/home_city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/amazon_ember_display_bd"
+        android:gravity="start"
+        android:text="Beijing"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/gl_left"
+        app:layout_constraintTop_toTopOf="@id/gl_top" />
+
+    <TextView
+        android:id="@+id/home_city_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="@font/amazon_ember_display_bd"
+        android:gravity="start"
+        android:text=" City"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/home_city_name"
+        app:layout_constraintTop_toTopOf="@id/gl_top" />
+
+    <TextView
+        android:id="@+id/home_weather_state"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/amazon_ember_display_lt"
+        android:gravity="center_vertical"
+        android:text="Sunny"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="@+id/home_city_name"
+        app:layout_constraintTop_toBottomOf="@+id/home_city_name" />
+
+    <TextView
+        android:id="@+id/home_temperature_value"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/amazon_ember_display_lt"
+        android:gravity="center_vertical"
+        android:text="22℃"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/home_weather_state"
+        app:layout_constraintLeft_toRightOf="@+id/home_weather_state"
+        app:layout_constraintTop_toTopOf="@+id/home_weather_state" />
+
+    <ImageView
+        android:id="@+id/home_weather_icon"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:src="@mipmap/sunny"
+        app:layout_constraintLeft_toRightOf="@+id/home_temperature_value"
+        app:layout_constraintTop_toTopOf="@+id/home_temperature_value" />
+
+
+    <TextView
+        android:id="@+id/home_news_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:fontFamily="@font/bookerly_italic"
+        android:gravity="center_vertical"
+        android:maxLines="3"
+        android:text="Try,“Alexa,input text here“"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@id/gl_bottom"
+        app:layout_constraintLeft_toLeftOf="@id/gl_left" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

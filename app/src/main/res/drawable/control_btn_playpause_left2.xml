@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item
+        android:maxLevel="0"
+        android:drawable="@null" />
+    <item
+        android:maxLevel="1"
+        android:drawable="@drawable/control_btn_loop" />
+    <item
+        android:maxLevel="2"
+        android:drawable="@drawable/control_btn_skip_back" />
+    <item
+        android:maxLevel="3"
+        android:drawable="@drawable/control_btn_thumb_down" />
+</level-list>
+

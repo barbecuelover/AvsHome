@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".home.MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/main_background_theme"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
+
+        <com.zw.avshome.home.views.FragmentViewPager
+
+            android:id="@+id/main_viewpager_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:banner_isloop="false"
+            app:banner_looptime="6000"
+            app:banner_switchtime="600" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/main_frame_add_devices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/gl_topside_1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="@+id/gl_rightside"
+        app:layout_constraintTop_toTopOf="@+id/gl_topside">
+
+        <ImageButton
+            android:id="@+id/main_pop_window_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@mipmap/main_add_devices"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/main_add_devices"
+             />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/gl_topside_2"
+        app:layout_constraintRight_toRightOf="@id/gl_rightside"
+        app:layout_constraintBottom_toBottomOf="@id/gl_topside_3"
+        app:layout_constraintDimensionRatio="1:1"
+        >
+
+        <ImageButton
+            android:id="@+id/main_wifi_connect_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/main_wifi_off"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/main_wifi_off" />
+
+        <ImageButton
+            android:id="@+id/main_alexa_login_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/main_alexa_not_login"
+            android:contentDescription="@string/main_alexa_not_login"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_topside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_topside_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_topside_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_topside_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.88" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

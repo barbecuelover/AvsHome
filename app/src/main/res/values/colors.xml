@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorTextCommon">#F7F7F7</color>
+    <color name="colorTextBlue">#039be5</color>
+
+    <!-- display cards -->
+    <color name="cardMainTitle">#151320</color>
+    <color name="currentWeather">#151320</color>
+    <color name="cardSubTitle">#827F87</color>
+    <color name="cardTextField">#000000</color>
+    <color name="cardBackground">#ffffff</color>
+    <color name="cardDivider">#e1e1e1</color>
+    <color name="cardListItemIndex">#000000</color>
+    <color name="cardListItemContent">#000000</color>
+    <color name="cardHighTemp">#151320</color>
+    <color name="currentCardLowTemp">#827F87</color>
+    <color name="cardLowTemp">#A9ABA9</color>
+    <color name="cardListGuideLine">#E4E6E3</color>
+    <color name="cardHeader">#FFFFFF</color>
+    <color name="cardTitle">#A9ABA9</color>
+    <color name="cardMusicTotalTime">#00CAFF</color>
+    <color name="progressBackground">#48474F</color>
+
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="blue">#009ed3</color>
+    <color name="blue_btn">#2c6ed2</color>
+    <color name="blue_sky">#62c8f9</color>
+    <color name="transparent">#00000000</color>
+</resources>

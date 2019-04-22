@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">AvsHome</string>
+
+
+    <string name="alexa_notification_channel_name">Alexa Notification</string>
+    <!-- Display Cards -->
+    <string name="card_down_arrow">Down Arrow</string>
+    <string name="card_up_arrow">Up Arrow</string>
+    <string name="card_current_weather_icon">Current Weather Icon</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="main_wifi_off">wifi off</string>
+    <string name="main_alexa_not_login">alexa not login</string>
+    <string name="main_add_devices">add devices</string>
+
+
+    <string-array name="footer_tips">
+        <item>Try \"Alexa,input text here\"</item>
+        <item>Try \"Alexa, how do I use Skype?\"</item>
+        <item>Try \"Alexa, open Fireplace.\"</item>
+        <item>Try \"Alexa, donate to Toys for Tots.\"</item>
+        <item>Try \"Alexa, help me write a letter to Santa.\"</item>
+        <item>Try \"Alexa, good afternoon.\"</item>
+        <item>Try \"Alexa, when is Ryan Gosling\'s birthday?\"</item>
+        <item>Try \"Alexa, open Three Questions.\"</item>
+        <item>Try \"Alexa, who is favored to win the SEC Championship?\"</item>
+        <item>Try \"Alexa, reorder coffee.\" </item>
+        <item>Try \"Alexa, what is the top-rated baking sheet?\"</item>
+    </string-array>
+</resources>

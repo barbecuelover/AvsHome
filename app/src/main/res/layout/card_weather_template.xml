@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardBackground"
+ >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.055" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.145" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.255" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.345" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.455" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.545" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.655" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.745" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVertical07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.855" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRightMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.945" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0525" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.160" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.535" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8425" />
+    <!--0.945-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.235" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.095" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.115" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontal05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <TextView
+        android:id="@+id/mainTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/amazon_ember_display_rg"
+        android:lines="1"
+        android:textAlignment="viewStart"
+        android:textColor="@color/cardMainTitle"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal02"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTopMargin" />
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/amazon_ember_display_lt"
+        android:lines="1"
+        android:textColor="@color/cardSubTitle"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRightMargin"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftMargin"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal03" />
+
+    <ImageView
+        android:id="@+id/currentWeatherIcon"
+        android:layout_width="264dp"
+        android:layout_height="248dp"
+        android:contentDescription="@string/card_current_weather_icon"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="@id/currentWeather"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guidelineLeftMargin"
+        app:layout_constraintTop_toTopOf="@id/currentWeather" />
+    <!--app:layout_constraintEnd_toEndOf="@id/guidelineVertical1"-->
+
+    <TextView
+        android:id="@+id/currentWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="122dp"
+        android:fontFamily="@font/amazon_ember_thin"
+        android:textColor="@color/currentWeather"
+        app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal2"
+        app:layout_constraintEnd_toStartOf="@+id/verticalDivider"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/currentWeatherIcon"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal01" />
+
+    <View
+        android:id="@+id/verticalDivider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="68dp"
+        android:background="@color/cardDivider"
+        app:layout_constraintBottom_toBottomOf="@+id/downArrow"
+        app:layout_constraintEnd_toStartOf="@+id/upArrow"
+        app:layout_constraintTop_toTopOf="@+id/upArrow" />
+
+    <TextView
+        android:id="@+id/highTempCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/amazon_ember_display_lt"
+        android:textColor="@color/cardHighTemp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal04"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRightMargin"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal01" />
+
+    <TextView
+        android:id="@+id/lowTempCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/amazon_ember_display_lt"
+        android:textColor="@color/currentCardLowTemp"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHorizontal05"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal2"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRightMargin" />
+
+    <ImageView
+        android:id="@+id/upArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="27dp"
+        android:contentDescription="@string/card_up_arrow"
+        android:gravity="center"
+        android:src="@drawable/card_up_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/highTempCurrent"
+        app:layout_constraintEnd_toStartOf="@id/highTempCurrent"
+        app:layout_constraintTop_toTopOf="@id/highTempCurrent" />
+
+    <ImageView
+        android:id="@+id/downArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="27dp"
+        android:contentDescription="@string/card_down_arrow"
+        android:gravity="center"
+        android:src="@drawable/card_down_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/lowTempCurrent"
+        app:layout_constraintEnd_toStartOf="@id/lowTempCurrent"
+        app:layout_constraintTop_toTopOf="@id/lowTempCurrent" />
+
+    <include
+        android:id="@+id/forecast4"
+        layout="@layout/card_weather_template_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomMargin"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRightMargin"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical07"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/forecast3"
+        layout="@layout/card_weather_template_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomMargin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical06"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical05"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/forecast2"
+        layout="@layout/card_weather_template_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomMargin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical04"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical03"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/forecast1"
+        layout="@layout/card_weather_template_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomMargin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical02"
+        app:layout_constraintStart_toEndOf="@+id/guidelineVertical01"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/forecast0"
+        layout="@layout/card_weather_template_weather_forecast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomMargin"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVertical1"
+        app:layout_constraintStart_toEndOf="@+id/guidelineLeftMargin"
+        app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal3"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
