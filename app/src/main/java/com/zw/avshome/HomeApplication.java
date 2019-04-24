@@ -2,6 +2,9 @@ package com.zw.avshome;
 
 import android.app.Application;
 
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.RequestOptions;
+
 public class HomeApplication extends Application {
 
     private static HomeApplication context;
@@ -15,7 +18,6 @@ public class HomeApplication extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
-        //www
     }
 
 }

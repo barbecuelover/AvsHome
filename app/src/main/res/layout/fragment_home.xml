@@ -14,7 +14,7 @@
         android:gravity="start"
         android:text="Beijing"
         android:textColor="@color/white"
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="@id/gl_left"
         app:layout_constraintTop_toTopOf="@id/gl_top" />
@@ -28,7 +28,7 @@
         android:gravity="start"
         android:text=" City"
         android:textColor="@color/white"
-        android:textSize="36sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/home_city_name"
         app:layout_constraintTop_toTopOf="@id/gl_top" />
@@ -65,7 +65,7 @@
         android:layout_width="60dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
-        android:src="@mipmap/sunny"
+
         app:layout_constraintLeft_toRightOf="@+id/home_temperature_value"
         app:layout_constraintTop_toTopOf="@+id/home_temperature_value" />
 
@@ -80,7 +80,7 @@
         android:maxLines="3"
         android:text="Try,“Alexa,input text here“"
         android:textColor="@color/white"
-        android:textSize="28sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@id/gl_bottom"
         app:layout_constraintLeft_toLeftOf="@id/gl_left" />
 

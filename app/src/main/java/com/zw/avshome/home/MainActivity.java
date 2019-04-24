@@ -109,16 +109,6 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
                     }
                 });
 
-                //  System Setting
-                popView.findViewById(R.id.ll_system_setting_pop_window).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popupWindow.dismiss();
-                        Intent intent = new Intent(Settings.ACTION_SETTINGS);
-                        startActivity(intent);
-                    }
-                });
-
                 popView.findViewById(R.id.ll_google_play_pop_window).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -136,8 +126,8 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
                         //startActivity(HubSettingActivity.createIntent(context, llMainContainer));
                     }
                 });
-
                 break;
+
             case R.id.main_alexa_login_status:
 
                 //startActivity(HubSettingActivity.createIntent(getActivity(), llMainContainer));

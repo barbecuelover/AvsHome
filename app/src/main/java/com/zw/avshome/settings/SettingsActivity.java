@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.AlexaService;
 import com.zw.avshome.home.base.ParentActivity;
+import com.zw.avshome.home.base.ParentFragment;
 import com.zw.avshome.settings.bean.SettingItemAdapter;
 import com.zw.avshome.settings.views.BlurringView;
 import com.zw.avshome.utils.NetWorkUtil;
@@ -51,7 +52,7 @@ public class SettingsActivity extends ParentActivity {
     @Override
     public void initData() {
         context = getActivity();
-        alexaService = AlexaService.getInstance();
+//        alexaService = AlexaService.getInstance();
         settingsListFragment = new SettingsListFragment();
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -62,6 +63,24 @@ public class SettingsActivity extends ParentActivity {
 
     @Override
     public void initEvent() {
+
+        mSettingsLeftBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hidePopCardItem();
+            }
+        });
+
+        mSettingsRightBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int count = fragmentManager.getBackStackEntryCount();
+                for (int i = 0; i < count; ++i) {
+                    fragmentManager.popBackStack();
+                }
+                finishActivity();
+            }
+        });
 
         settingsListFragment.setOnItemClickListener(new SettingItemAdapter.OnItemClickListener() {
             @Override
@@ -80,7 +99,10 @@ public class SettingsActivity extends ParentActivity {
                         }
 
                         break;
-                    case 1: break;
+                    case 1:
+                        ThemeSelectFragment themeSelectFragment = new ThemeSelectFragment();
+                        replaceFragment(themeSelectFragment);
+                        break;
                     case 2: break;
                     case 3: break;
                 }
@@ -91,5 +113,63 @@ public class SettingsActivity extends ParentActivity {
     @Override
     public Activity getActivity() {
         return this;
+    }
+
+
+    /**
+     * 替换当前Fragment
+     * @param fragment
+     */
+    public void replaceFragment(ParentFragment fragment) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.settings_fragment_container, fragment);
+        fragmentTransaction.addToBackStack(null);
+        int commit = fragmentTransaction.commitAllowingStateLoss();
+        showAddCardItem(commit);
+    }
+
+    private void showAddCardItem(int commit) {
+        switch (commit) {
+            case 0:
+                mBgCardView3.setVisibility(View.VISIBLE);
+                break;
+            case 1:
+                mBgCardView2.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                mBgCardView1.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
+
+    /**
+     *Fragment 表示后面层级的背景
+     */
+    private void hidePopCardItem() {
+        int count = fragmentManager.getBackStackEntryCount();
+        fragmentManager.popBackStack();
+
+        switch (count) {
+            case 0:
+                onBackPressed();
+                break;
+            case 1:
+                mBgCardView1.setVisibility(View.INVISIBLE);
+                mBgCardView2.setVisibility(View.INVISIBLE);
+                mBgCardView3.setVisibility(View.INVISIBLE);
+                break;
+            case 2:
+                mBgCardView1.setVisibility(View.INVISIBLE);
+                mBgCardView2.setVisibility(View.INVISIBLE);
+                mBgCardView3.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                mBgCardView1.setVisibility(View.INVISIBLE);
+                mBgCardView2.setVisibility(View.VISIBLE);
+                mBgCardView3.setVisibility(View.VISIBLE);
+                break;
+
+        }
     }
 }

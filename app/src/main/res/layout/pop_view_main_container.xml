@@ -26,8 +26,8 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:layout_gravity="center_vertical"
-                android:text="Add new device"
-                android:textSize="15sp"
+                android:text="Add Devices"
+                android:textSize="12sp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="#FF4D4D4E"
                 android:layout_width="0dp"
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_gravity="center_vertical"
                 android:text="Hub Setting"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="#FF4D4D4E"
                 android:layout_width="0dp"
@@ -59,28 +59,7 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_system_setting_pop_window"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <ImageView
-                android:src="@mipmap/pop_window_system_setting"
-                android:layout_gravity="center_vertical"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_gravity="center_vertical"
-                android:text="System Setting"
-                android:textSize="15sp"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="#FF4D4D4E"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/ll_google_play_pop_window"
@@ -96,7 +75,7 @@
                 android:layout_height="wrap_content" />
             <TextView
                 android:text="Google Market"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textColor="#FF4D4D4E"
                 android:fontFamily="@font/roboto_regular"
                 android:layout_gravity="center_vertical"
@@ -104,6 +83,7 @@
                 android:layout_weight="2"
                 android:layout_height="wrap_content" />
         </LinearLayout>
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import androidx.core.app.ActivityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +24,7 @@ import com.zw.avshome.home.interfaces.WeatherRequestInterface;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import androidx.core.app.ActivityCompat;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -54,6 +54,7 @@ public class HomeFragment extends ParentFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreateView(inflater,container,savedInstanceState);
         view = inflater.inflate(R.layout.fragment_home, container, false);
         initView();
         initData();
@@ -73,6 +74,7 @@ public class HomeFragment extends ParentFragment {
     @Override
     public void initData() {
         permissions  = new RxPermissions(this);
+    
         setWeather();
         setAlexaTips();
     }
@@ -109,18 +111,19 @@ public class HomeFragment extends ParentFragment {
                                         String iconStr = weather.getWeather().get(0).getIcon();
                                         String iconUrl = getWeatherUrl(iconStr);
                                         double temp = weather.getMain().getTemp();
-                                        int fTemperature = (int) Math.round((9 / 5) * (temp - 273.15) + 32);
+                                        //int fTemperature = (int) Math.round((9 / 5) * (temp - 273.15) + 32);
+                                        int cTemperature = (int)(temp - 273.15);
                                         String cityName = weather.getName();
 
                                         Log.i(TAG, "weatherStr :" + weatherStr);
-                                        Log.i(TAG, "\nfTemperature :" + fTemperature);
+                                        Log.i(TAG, "\nTemperature :" + cTemperature);
                                         Log.i(TAG, "\ncityName :" + cityName);
 
                                         mWeatherState.setText(weatherStr);
-                                        mTemperatureValue.setText(fTemperature + "°");
+                                        mTemperatureValue.setText(cTemperature + "℃");
                                         mCityName.setText(cityName);
-
                                         Glide.with(context).load(iconUrl).into(mWeatherIcon);
+
 
                                     }
                                 }, new Consumer<Throwable>() {

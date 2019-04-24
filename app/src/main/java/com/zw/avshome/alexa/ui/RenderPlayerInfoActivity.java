@@ -18,7 +18,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
-import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou;
+
 import com.zw.avshome.home.base.ParentActivity;
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.util.DownloadImageTask;
@@ -564,7 +564,7 @@ public class RenderPlayerInfoActivity extends ParentActivity implements View.OnC
             JSONArray sources = logo.getJSONArray("sources");
             String url = getImageUrl(sources);
             if (url.contains(".svg")) {
-                GlideToVectorYou.justLoadImage(this, Uri.parse(url), mPartnerLogo);
+            //    GlideToVectorYou.justLoadImage(this, Uri.parse(url), mPartnerLogo);
             } else {
                 Glide.with(this).load(url).into(mPartnerLogo);
 

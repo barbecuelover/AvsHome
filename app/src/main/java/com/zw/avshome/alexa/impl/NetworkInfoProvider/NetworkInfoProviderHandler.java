@@ -85,8 +85,8 @@ public class NetworkInfoProviderHandler extends NetworkInfoProvider {
 
                 Log.i( sTag, String.format( "Network status changed. STATUS: %s, RSSI: %s",
                         mStatus, rssi ) );
-                updateGUI( mStatus );
-                networkStatusChanged( mStatus, rssi );
+                //updateGUI( mStatus );
+                //networkStatusChanged( mStatus, rssi );
 
                 // Notify AuthProvider to login if we aren't logged on yet
                 if (mStatus == NetworkStatus.CONNECTED && mAuthProvider != null) {
