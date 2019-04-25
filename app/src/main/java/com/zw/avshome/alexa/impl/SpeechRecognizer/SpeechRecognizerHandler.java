@@ -101,64 +101,6 @@ public class SpeechRecognizerHandler extends SpeechRecognizer
         write(buffer, size); // Write audio samples to engine
     }
 
-//    private void setupGUI( boolean wakeWordSupported ) {
-//        // Toggle Wake Word switch
-//        final View toggleItem = mActivity.findViewById( R.id.toggleWakeWord );
-//        ( ( TextView ) toggleItem.findViewById( R.id.text ) ).setText( R.string.wake_word_enabled );
-//
-//        // Wake Word not supported message
-//        final View message = mActivity.findViewById( R.id.wakeWordNotSupportedMessage );
-//
-//        // Show toggle Wake Word option only if Wake Word supported
-//        if ( wakeWordSupported ) {
-//
-//            final SwitchCompat wakeWordSwitch = toggleItem.findViewById( R.id.drawerSwitch );
-//
-//            mActivity.runOnUiThread( new Runnable() {
-//                @Override
-//                public void run() {
-//                    toggleItem.setVisibility( View.VISIBLE );
-//                    message.setVisibility( View.GONE );
-//                    wakeWordSwitch.setChecked( mWakeWordEnabled );
-//                }
-//            } );
-//
-//            wakeWordSwitch.setOnCheckedChangeListener( new CompoundButton.OnCheckedChangeListener
-//                    () {
-//                @Override
-//                public void onCheckedChanged( CompoundButton buttonView, boolean isChecked ) {
-//                    if ( isChecked ) {
-//                        mLogger.postInfo( sTag, "Enabling Wake Word" );
-//                        mExecutor.submit( new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                enableWakewordDetection();
-//                            }
-//                        } );
-//                    } else {
-//                        mLogger.postInfo( sTag, "Disabling Wake Word" );
-//                        mExecutor.submit( new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                disableWakewordDetection();
-//                            }
-//                        } );
-//                    }
-//                    mWakeWordEnabled = isChecked;
-//                }
-//            } );
-//        } else {
-//            mActivity.runOnUiThread( new Runnable() {
-//                @Override
-//                public void run() {
-//                    toggleItem.setVisibility( View.GONE );
-//                    message.setVisibility( View.VISIBLE );
-//                }
-//            } );
-//        }
-//    }
-
-    /* For playing speech recognition audio cues */
 
     public enum AudioCueState {START_TOUCH, START_VOICE, END}
 

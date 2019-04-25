@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -162,7 +161,7 @@ public class RenderPlayerInfoActivity extends ParentActivity implements View.OnC
 
     @Override
     public void initData() {
-        mJsonObject = alexaService.getmRenderPlayerJson();
+        mJsonObject = alexaService.getRenderPlayerJson();
         toJsonObject(mJsonObject);
     }
 

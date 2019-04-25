@@ -16,7 +16,6 @@
 package com.zw.avshome.alexa.impl.AuthProvider;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.amazon.aace.alexa.AuthProvider;
@@ -33,6 +32,7 @@ import com.amazon.identity.auth.device.api.authorization.User;
 import com.amazon.identity.auth.device.api.workflow.RequestContext;
 
 import com.zw.avshome.utils.Constant;
+import com.zw.avshome.utils.SharePreUtil;
 
 //import org.greenrobot.eventbus.EventBus;
 import org.json.JSONObject;
@@ -47,6 +47,7 @@ import java.util.TimerTask;
 
 public class LoginWithAmazonBrowser extends Observable {
 
+    static final String LWA_LOGIN_METHOD_KEY = "LWA";
     private static final String sTag = "LoginWithAmazonBrowser";
 
     private static final String sAlexaAllScope = "alexa:all";
@@ -62,7 +63,6 @@ public class LoginWithAmazonBrowser extends Observable {
     // Access token expires after one hour
     private static final int sAccessTokenExpirationTime = 3600000;
 
-    private final SharedPreferences mPreferences;
     private final AuthProviderHandler mAuthProvider;
     private final RequestContext mRequestContext;
     private String mProductID;
@@ -71,17 +71,18 @@ public class LoginWithAmazonBrowser extends Observable {
     private Timer mTimer = new Timer();
     private TimerTask mRefreshTimerTask;
     private Context mContext;
+    private SharePreUtil sharePreUtil;
 
     public LoginWithAmazonBrowser(Context context,
-                                  SharedPreferences preferences,
                                   AuthProviderHandler authProvider) {
         mContext = context;
-        mPreferences = preferences;
         mAuthProvider = authProvider;
+
         mHasApiKey = false;
 
-        mProductID = mPreferences.getString(Constant.SpKeys.preference_product_id, "");
-        mProductDSN = mPreferences.getString(Constant.SpKeys.preference_product_dsn, "");
+        sharePreUtil = new SharePreUtil(context, Constant.AlexaAuthConfig.SP_FILE_NAME);
+        mProductID = sharePreUtil.getValue(Constant.AlexaAuthConfig.SP_KEY_PRODUCT_ID, "");
+        mProductDSN = sharePreUtil.getValue(Constant.AlexaAuthConfig.SP_KEY_PRODUCT_DSN, "");
 
         // Check for API key
         try {
@@ -132,7 +133,7 @@ public class LoginWithAmazonBrowser extends Observable {
                 /* Inform the AuthProvider of auth failure  */
                 @Override
                 public void onError(AuthError ae) {
-                    android.util.Log.d(sTag, "---false" + ae.getMessage());
+                    Log.e("zwcc", "---onError" + ae.getMessage());
                     mAuthProvider.onAuthStateChanged(AuthProvider.AuthState.UNINITIALIZED,
                             AuthProvider.AuthError.AUTHORIZATION_FAILED);
                 }
@@ -140,7 +141,7 @@ public class LoginWithAmazonBrowser extends Observable {
                 /* Authorization was cancelled before it could be completed. */
                 @Override
                 public void onCancel(AuthCancellation cancellation) {
-                    android.util.Log.d(sTag, "---onCancel");
+                    Log.d(sTag, "---onCancel");
                 }
             });
 
@@ -157,11 +158,13 @@ public class LoginWithAmazonBrowser extends Observable {
                 productInstanceAttributes.put("deviceSerialNumber", mProductDSN);
                 scopeData.put("productInstanceAttributes", productInstanceAttributes);
                 scopeData.put("productID", mProductID);
-
+                Log.i("zwcc","deviceSerialNumber="+mProductDSN);
+                Log.i("zwcc","productInstanceAttributes ="+productInstanceAttributes.toString());
+                Log.i("zwcc","productID ="+mProductID);
                 // Save logged in method and access token
-                SharedPreferences.Editor editor = mPreferences.edit();
-                editor.putString(Constant.SpKeys.preference_login_method, LoginWithAmazon.LWA_LOGIN_METHOD_KEY);
-                editor.apply();
+//                SharedPreferences.Editor editor = mPreferences.edit();
+//                editor.putString(Constant.AlexaAuthConfig.preference_login_method, LWA_LOGIN_METHOD_KEY);
+//                editor.apply();
 
                 if ( sUserProfileEnabled ) {
                     AuthorizationManager.authorize( new AuthorizeRequest
@@ -171,6 +174,7 @@ public class LoginWithAmazonBrowser extends Observable {
                             .shouldReturnUserData( true )
                             .build()
                     );
+                    Log.i("zwcc","scopeData ="+scopeData.toString());
                 } else {
                     AuthorizationManager.authorize(new AuthorizeRequest
                             .Builder( mRequestContext )
@@ -193,9 +197,9 @@ public class LoginWithAmazonBrowser extends Observable {
                         if (mRefreshTimerTask != null) mRefreshTimerTask.cancel();
 
                         // Save logged in method and access token
-                        SharedPreferences.Editor editor = mPreferences.edit();
-                        editor.putString(Constant.SpKeys.preference_login_method, "");
-                        editor.apply();
+//                        SharedPreferences.Editor editor = mPreferences.edit();
+//                        editor.putString(Constant.AlexaAuthConfig.preference_login_method, "");
+//                        editor.apply();
 
                         mAuthProvider.clearAuthToken();
                         mAuthProvider.onAuthStateChanged(AuthProvider.AuthState.UNINITIALIZED,
@@ -242,6 +246,7 @@ public class LoginWithAmazonBrowser extends Observable {
         public void onSuccess(AuthorizeResult result) {
             Log.d(sTag, "TokenListener---onSuccess");
             String accessToken = result.getAccessToken();
+            Log.i("zwcc","accessToken  = " +accessToken);
             if (accessToken != null) {
                 mAuthProvider.setAuthToken(accessToken);
                 mAuthProvider.onAuthStateChanged(AuthProvider.AuthState.REFRESHED,
@@ -283,11 +288,11 @@ public class LoginWithAmazonBrowser extends Observable {
             Log.d(sTag, String.format("User Profile: Name: %s, Email: %s, User ID: %s",
                     user.getUserName(), user.getUserEmail(), user.getUserId()));
             /*Store userProfile information*/
-            SharedPreferences.Editor editor = mPreferences.edit();
-            editor.putString(Constant.SpKeys.user_profile_name, user.getUserName());
-            editor.putString(Constant.SpKeys.user_profile_id, user.getUserId());
-            editor.putString(Constant.SpKeys.user_profile_email, user.getUserEmail());
-            editor.apply();
+//            SharedPreferences.Editor editor = mPreferences.edit();
+//            editor.putString(Constant.AlexaAuthConfig.SP_KEY_USER_NAME, user.getUserName());
+//            editor.putString(Constant.AlexaAuthConfig.SP_KEY_USER_ID, user.getUserId());
+//            editor.putString(Constant.AlexaAuthConfig.SP_KEY_USER_EMAIL, user.getUserEmail());
+//            editor.apply();
         } else {
             Log.d(sTag, "Fetched user is null.");
         }

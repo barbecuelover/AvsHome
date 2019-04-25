@@ -8,28 +8,28 @@ import android.os.Environment;
  */
 public class Constant {
 
-
-    public static String PRODUCT_ID = "123456";
-    public static String PRODUCT_SN = "sn123456";
-    public static String PRODUCT_NAME = "name123456";
-    public static String PRODUCT_MAC = "mac123456";
-    public static String FWVER = "1.0";
-    public static String SERVER = "tcp://172.28.32.100";
-    public static int PORT = 1883;
-
     public static final String D5_FIRMWARE_FILE_FULL_PATH =  Environment.getExternalStorageDirectory().getAbsolutePath() + "/SmartHomeHub/d5firmware.bin";
 
     public class Intent {
+
         public static final String UPDATE_COMMON_APP = "updateCommonApp";
         public static final String ACTION_MIC_MUTE = "com.ecs.action.micmute";
         public static final String VOLUME_CHANGED_ACTION = "android.media.VOLUME_CHANGED_ACTION";
         public static final String EXTRA_VOLUME_STREAM_TYPE = "android.media.EXTRA_VOLUME_STREAM_TYPE";
-        public static final String EXTRA_VOLUME_STREAM_VALUE =
-                "android.media.EXTRA_VOLUME_STREAM_VALUE";
+        public static final String EXTRA_VOLUME_STREAM_VALUE = "android.media.EXTRA_VOLUME_STREAM_VALUE";
 
     }
 
     public class MqttInfo {
+
+        public static final String PRODUCT_ID = "123456";
+        public static final String PRODUCT_SN = "sn123456";
+        public static final String PRODUCT_NAME = "name123456";
+        public static final String PRODUCT_MAC = "mac123456";
+        public static final String FWVER = "1.0";
+        public static final String SERVER = "tcp://172.28.32.100";
+        public static final int PORT = 1883;
+
         public static final String SHARED_PRE_FILE_NAME = "hubConfig";
         public static final String SHARED_PRE_KEY_TOKEN = "hubToken";
         public static final String SHARED_PRE_KEY_USER_NAME = "userName";
@@ -153,7 +153,7 @@ public class Constant {
 
     }
 
-    public class Nest {
+    public class NestConfig {
 
         /**
          * Replace this with your Nest Product Client ID in the OAuth section.
@@ -177,36 +177,27 @@ public class Constant {
 
     }
 
-    public class SpKeys {
 
-        public static final String ISFRISTINITSQL = "isfristinitsql";
+    /**
+     * 存储 Alexa Auth相关的SharePreference config
+     */
+    public class AlexaAuthConfig {
+
 
         /* Alexa Config SharedPreference*/
-        public static final String preference_file_key = "com.ecs.smarthub.AlexaSharedPreferences";
-        public static final String preference_client_id = "Client ID Key";
-        public static final String preference_client_secret = "Client Secret Key";
-        public static final String preference_product_id = "Product ID Key";
-        public static final String preference_product_dsn = "Product DSN Key";
-        public static final String preference_refresh_token = "Refresh Token Key";
-        public static final String preference_login_method = "Login Method Key";
+        public static final String SP_FILE_NAME = "alexa_auth_config";
 
-        public static final String user_profile_email = "User Profile Email";
-        public static final String user_profile_id = "User Profile ID";
-        public static final String user_profile_name = "User Profile Name";
+        public static final String SP_KEY_CLIENT_ID = "client_id";
+        public static final String SP_KEY_CLIENT_SECRET = "client_secret";
+        public static final String SP_KEY_PRODUCT_ID = "product_id";
+        public static final String SP_KEY_PRODUCT_DSN = "product_dsn";
 
-        public static final String key_bg_theme_Image = "key_bg_theme_Image";
-        public static final String disturb_mode_boolean = "disturb_mode_boolean";
-    }
-
-    public class SqlTable {
+        public static final String SP_KEY_USER_EMAIL = "user_email";
+        public static final String SP_KEY_USER_ID = "user_id";
+        public static final String SP_KEY_USER_NAME = "user_name";
 
     }
 
-    public class Global {
-        public static final long LOADINGSHOWTIME_SHORT = 3 * 1000;
-        public static final long LOADINGSHOWTIME_LONG = 30 * 1000;
-        public static final long LOADINGSHOWTIME_VERYLONG = 50 * 1000;
-    }
 
     public class Setting {
         public static final String ALEXASETTING = "Alexa";

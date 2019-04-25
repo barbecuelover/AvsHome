@@ -326,7 +326,6 @@ public class AlexaConfiguration {
      * @param  databaseFilePath The file path to the SQLite database used to store persistent settings data.
      * The database will be created on initialization if it does not already exist.
      *
-     * @param  locale The current locale setting on the client
      */
     public static EngineConfiguration createSettingsConfig( String databaseFilePath ) {
         return AlexaConfiguration.createSettingsConfig( databaseFilePath, "en-US" );

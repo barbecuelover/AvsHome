@@ -19,21 +19,19 @@ import android.content.Context;
 import android.util.Log;
 
 import com.amazon.aace.alexa.AuthProvider;
-import com.zw.avshome.alexa.impl.NetworkInfoProvider.NetworkInfoProviderHandler;
 
 
 public class AuthProviderHandler extends AuthProvider {
 
     private static final String sTag = "AuthProvider";
 
-    private final LoginWithAmazon mLwa;
+    private final LoginWithAmazonBrowser mLwa;
     private AuthState mAuthState = AuthState.UNINITIALIZED;
     private String mAuthToken = "";
 
-    public AuthProviderHandler(Context mContext, NetworkInfoProviderHandler networkInfoProviderHandler) {
-
+    public AuthProviderHandler(Context mContext) {
         // Authenticate with LWA
-        mLwa = new LoginWithAmazon(mContext, this,networkInfoProviderHandler);
+        mLwa = new LoginWithAmazonBrowser(mContext, this);
     }
 
     @Override

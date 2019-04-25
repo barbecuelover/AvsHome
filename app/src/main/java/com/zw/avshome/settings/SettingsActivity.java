@@ -38,6 +38,13 @@ public class SettingsActivity extends ParentActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        alexaService.initAuthProvider();
+        alexaService.onResume();
+    }
+
+    @Override
     public void initView() {
 
         mBgBlurView = findViewById(R.id.settings_bg_blur_view);
@@ -52,7 +59,7 @@ public class SettingsActivity extends ParentActivity {
     @Override
     public void initData() {
         context = getActivity();
-//        alexaService = AlexaService.getInstance();
+        alexaService = AlexaService.getInstance();
         settingsListFragment = new SettingsListFragment();
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -88,13 +95,13 @@ public class SettingsActivity extends ParentActivity {
                 switch (position){
                     case 0: //alexa login/logout
                         boolean isNetAvailable = NetWorkUtil.isNetWorkConnected(context);
-                        if (isNetAvailable){
+                        if (!isNetAvailable){
 //                            new SweetAlertDialog(context,SweetAlertDialog.WARNING_TYPE)
 //                                    .setTitleText("")
 //                                    .setContentText("There is no network at present. Please connect to the network and try again…")
 //                                    .setCancelText("cancel").show();
                         }else {
-
+                            alexaService.login();
 
                         }
 

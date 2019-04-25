@@ -65,8 +65,8 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
     @Override
     public void initData() {
         context = getActivity();
-//        alexaService = AlexaService.getInstance();
-//        alexaService.start();
+        alexaService = AlexaService.getInstance();
+        alexaService.start();
         homeFragment = new HomeFragment();
         deviceFragment = new DeviceFragment();
         appFragment = new AppFragment();
@@ -77,6 +77,13 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
 
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        alexaService.initAuthProvider();
+        alexaService.onResume();
     }
 
     @Override
@@ -133,7 +140,11 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
                 //startActivity(HubSettingActivity.createIntent(getActivity(), llMainContainer));
                 break;
             case R.id.main_wifi_connect_status:
-                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)); //直接进入手机中的wifi网络设置界面
+//                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)); //直接进入手机中的wifi网络设置界面
+
+
+                alexaService.login();
+
                 break;
 
         }
