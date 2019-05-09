@@ -19,7 +19,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.zw.avshome.R;
 import com.zw.avshome.home.base.ParentFragment;
 import com.zw.avshome.home.bean.Weather;
-import com.zw.avshome.home.interfaces.WeatherRequestInterface;
+import com.zw.avshome.home.bean.WeatherRequestInterface;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

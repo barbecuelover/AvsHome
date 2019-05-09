@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ThirdLibrary</string>
+    <string name="text_indicator">%1$d/%2$d</string>
+</resources>

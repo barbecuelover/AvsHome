@@ -1,1 +1,2 @@
-include ':app',':aace'
+include ':app', ':aace', ':Devicelibrary'
+project(':Devicelibrary').projectDir = new File('Thirdlibrary')

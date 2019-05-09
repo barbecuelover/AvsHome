@@ -13,7 +13,7 @@ import com.zw.avshome.alexa.AlexaService;
 import com.zw.avshome.home.base.ParentActivity;
 import com.zw.avshome.home.base.ParentFragment;
 import com.zw.avshome.settings.bean.SettingItemAdapter;
-import com.zw.avshome.settings.views.BlurringView;
+import com.zw.avshome.home.views.BlurringView;
 import com.zw.avshome.utils.NetWorkUtil;
 
 import androidx.cardview.widget.CardView;

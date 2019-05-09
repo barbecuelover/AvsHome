@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".settings.SettingsActivity">
 
-    <com.zw.avshome.settings.views.BlurringView
+    <com.zw.avshome.home.views.BlurringView
         android:id="@+id/settings_bg_blur_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
