@@ -153,7 +153,7 @@ public class AudioInputManager {
     private boolean startRecording() {
         if (mReaderRunnable != null && mReaderRunnable.isRunning()) {
             Log.i(sTag,
-                    "startRecording() called but AudioRecorder thread is already running");
+                    "startMonitoringWakeWord() called but AudioRecorder thread is already running");
             return false;
         } else {
             // Start audio recording

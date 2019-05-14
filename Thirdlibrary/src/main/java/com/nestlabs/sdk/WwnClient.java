@@ -1,6 +1,6 @@
 package com.nestlabs.sdk;
 
-import android.support.annotation.NonNull;
+
 
 import com.nestlabs.sdk.models.NestToken;
 import com.nestlabs.sdk.setters.CameraSetter;
@@ -17,6 +17,7 @@ import com.nestlabs.sdk.rest.RestClient;
 
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.NonNull;
 import okhttp3.OkHttpClient;
 
 public class WwnClient {

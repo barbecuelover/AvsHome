@@ -1,12 +1,14 @@
 package com.nestlabs.sdk.setters;
 
-import android.support.annotation.NonNull;
+
 
 import com.nestlabs.sdk.Callback;
 import com.nestlabs.sdk.models.Thermostat;
 import com.nestlabs.sdk.models.Utils;
 import com.nestlabs.sdk.rest.RestClient;
 import com.nestlabs.sdk.rest.parsers.Constants;
+
+import androidx.annotation.NonNull;
 
 public class ThermostatSetter {
 

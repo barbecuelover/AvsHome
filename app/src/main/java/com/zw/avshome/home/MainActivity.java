@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.provider.Settings;
+
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -14,6 +16,9 @@ import android.widget.PopupWindow;
 
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.AlexaService;
+import com.zw.avshome.alexa.interfaces.ClientConnectStateListener;
+import com.zw.avshome.alexa.interfaces.StateChangeListener;
+import com.zw.avshome.alexa.ui.AlexaIndicator;
 import com.zw.avshome.home.base.ParentActivity;
 import com.zw.avshome.home.views.FragmentViewPager;
 import com.zw.avshome.settings.SettingsActivity;
@@ -23,6 +28,7 @@ import java.util.List;
 
 public class MainActivity extends ParentActivity implements View.OnClickListener {
 
+    private final static String TAG = "MainActivity";
     private ImageButton btnPopWindow;
     private ImageButton btnWifiStatus;
     private ImageButton btnAlexaLogin;
@@ -35,7 +41,8 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
     private HomeFragment homeFragment;
     private DeviceFragment deviceFragment;
     private AppFragment appFragment;
-    AlexaService alexaService;
+    private AlexaService alexaService;
+    private AlexaIndicator alexaIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +74,10 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
         context = getActivity();
         alexaService = AlexaService.getInstance();
         alexaService.start();
+
+        alexaIndicator = AlexaIndicator.getInstance(this);
+        alexaIndicator.setAlexaIndicatorBar();
+
         homeFragment = new HomeFragment();
         deviceFragment = new DeviceFragment();
         appFragment = new AppFragment();
@@ -91,11 +102,49 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
         btnAlexaLogin.setOnClickListener(this);
         btnPopWindow.setOnClickListener(this);
         btnWifiStatus.setOnClickListener(this);
+        setAlexaClientListener();
+
     }
 
     @Override
     public Activity getActivity() {
         return this;
+    }
+
+
+    private void setAlexaClientListener() {
+        //连接状态 disconnected connected pending
+        alexaService.setClientConnectStateChange(new ClientConnectStateListener() {
+            @Override
+            public void setClientConnectStateListener(final Object data) {
+                if (data.toString() != null) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            updateAlexaIndicator(data.toString());
+                        }
+                    });
+                } else {
+                    Log.e(TAG,"setClientConnectStateListener data  is null");
+                }
+            }
+        });
+        //
+        alexaService.setStateChangeListener(new StateChangeListener() {
+            @Override
+            public void setStateChangeListener(final Object data) {
+                if (data.toString() != null) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            updateAlexaIndicator(data.toString());
+                        }
+                    });
+                } else {
+                    Log.e(TAG,"setStateChangeListener data  is null");
+                }
+            }
+        });
     }
 
     @Override
@@ -138,15 +187,63 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
             case R.id.main_alexa_login_status:
 
                 //startActivity(HubSettingActivity.createIntent(getActivity(), llMainContainer));
+                alexaService.login();
                 break;
             case R.id.main_wifi_connect_status:
 //                startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)); //直接进入手机中的wifi网络设置界面
 
-
-                alexaService.login();
-
                 break;
 
         }
+    }
+
+
+    /**
+     * 根据AVS当前状态显示底部状态图标动画
+     * @param str avs 状态
+     *
+     */
+    private void updateAlexaIndicator(String str) {
+        if (str != null) {
+            switch (str) {
+                case "LISTENING":
+                    alexaIndicator.setIndicatorState();
+                    break;
+                case "THINKING":
+                    alexaIndicator.setIndicatorThinkingState();
+                    break;
+                case "SPEAKING":
+                    alexaIndicator.clearIndicator();
+                case "IDLE":
+                    alexaIndicator.clearIndicator();
+                    //Alexa 处理完动作后再次开始监听唤醒词。此逻辑导致 Alexa在Speaking回答指令时，无法唤醒Alexa
+                   // alexaService.startMonitoringWakeWord();
+                    break;
+                case "DISCONNECTED":
+                    alexaIndicator.setIndicatorDisconnectedState();
+                  //  alexaService.stopMonitoringWakeWord();
+                    break;
+                case "PENDING":
+                    alexaIndicator.setIndicatorDisconnectedState();
+                    break;
+                case "CONNECTED":
+                    alexaIndicator.clearIndicator();
+                    //alexa 登录成功后 开始监听 唤醒词
+                   // alexaService.startMonitoringWakeWord();
+                    break;
+                default:
+                    alexaIndicator.clearIndicator();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (alexaIndicator!=null){
+            alexaIndicator.removeView();
+        }
+
     }
 }

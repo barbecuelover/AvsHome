@@ -1,6 +1,6 @@
 package com.nestlabs.sdk.rest;
 
-import android.support.annotation.NonNull;
+
 
 import com.nestlabs.sdk.Callback;
 import com.nestlabs.sdk.NestException;
@@ -14,6 +14,7 @@ import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.Locale;
 
+import androidx.annotation.NonNull;
 import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;

@@ -16,7 +16,7 @@
 
 package com.nestlabs.sdk;
 
-import android.support.annotation.NonNull;
+
 
 import com.nestlabs.sdk.models.Camera;
 import com.nestlabs.sdk.models.DeviceUpdate;
@@ -28,6 +28,8 @@ import com.nestlabs.sdk.models.Thermostat;
 import com.nestlabs.sdk.rest.parsers.ErrorMessage;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
 
 /**
  * NestListener are listeners that receive events from the WwnClient and allow a user to complete

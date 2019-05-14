@@ -1,7 +1,7 @@
 package com.nestlabs.sdk.rest.parsers;
 
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import androidx.annotation.NonNull;
 
 public class ObjectModelMapper implements Mapper {
 

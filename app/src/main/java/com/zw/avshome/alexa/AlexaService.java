@@ -15,11 +15,14 @@
 
 package com.zw.avshome.alexa;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -67,9 +70,7 @@ import com.zw.avshome.alexa.ui.ListTemplate1Activity;
 import com.zw.avshome.alexa.ui.RenderPlayerInfoActivity;
 import com.zw.avshome.alexa.ui.WeatherActivity;
 import com.zw.avshome.utils.Constant;
-import com.zw.avshome.utils.SharePreUtil;
 import com.zw.avshome.utils.StringUtil;
-import com.zw.avshome.utils.VolumeUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,6 +82,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import ai.kitt.snowboy.MsgEnum;
 
 public class AlexaService {
 
@@ -125,7 +128,7 @@ public class AlexaService {
     private AudioManager mAudioManager;
     // Core
     private Engine mEngine;
-
+    private WakeWordService wakeWordService;
 
 
     private String mCurrentAudioItemId;
@@ -277,6 +280,10 @@ public class AlexaService {
         setAVSListeners();
 
         setDefaultSettings();
+
+        /* Initialize snowBoy wakeWord*/
+//        wakeWordService = WakeWordService.getInstance(mContext);
+//        wakeWordService.init(handle);
 
     }
 
@@ -599,7 +606,8 @@ public class AlexaService {
         } catch (IOException e) {
             Log.e(TAG, "Cannot copy certs to cache directory. Error: " + e.getMessage());
         }
-
+        // Create AAC engine
+        mEngine = Engine.create();
 
         AlexaConfiguration.TemplateRuntimeTimeout[] timeoutList = new AlexaConfiguration.TemplateRuntimeTimeout[]{
                 new AlexaConfiguration.TemplateRuntimeTimeout(AlexaConfiguration.TemplateRuntimeTimeoutType.DISPLAY_CARD_TTS_FINISHED_TIMEOUT, 8000),
@@ -698,6 +706,65 @@ public class AlexaService {
                     assetPath, destFile));
         }
     }
+
+
+    //<==================================snow boy ,wake word ===========start >//
+    // 唤醒词唤醒后，调用AVS的录音。让其识别 问题。
+    public void talkToAlexa() {
+        if (mAlexaClient != null && mSpeechRecognizer != null) {
+            if (mAlexaClient.getConnectionStatus()
+                    == AlexaClient.ConnectionStatus.CONNECTED) {
+                mSpeechRecognizer.onTapToTalk();
+                Log.d(TAG, "####### start talk to AVS  #######");
+            } else {
+                String message = "AlexaClient not connected. ConnectionStatus: "
+                        + mAlexaClient.getConnectionStatus();
+                Log.d(TAG, "#######  AVS not connected #######" + message);
+            }
+        }
+    }
+
+    public void startMonitoringWakeWord() {
+        Log.d(TAG, "Start Monitoring Wake Word");
+        wakeWordService.startRecording();
+    }
+
+    public void stopMonitoringWakeWord() {
+        Log.d(TAG, "Stop Monitoring Wake Word");
+        wakeWordService.stopRecording();
+    }
+
+    /**
+     * 将 Snowboy 唤醒词的识别结果Msg返回,识别成功 (msg =MSG_SNOWBOY_STOP_AND_ALEXA_LISTENING)后 ，说明用户开始向avs 发起语音指令。
+     */
+    @SuppressLint("HandlerLeak")
+    public Handler handle = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            MsgEnum message = MsgEnum.getMsgEnum(msg.what);
+            switch (message) {
+                case MSG_ACTIVE:
+                    stopMonitoringWakeWord();
+                    break;
+                case MSG_SNOWBOY_STOP_AND_ALEXA_LISTENING:
+                    mAudioInputManager = new AudioInputManager();
+                    talkToAlexa();
+                case MSG_INFO:
+                    break;
+                case MSG_VAD_SPEECH:
+                    break;
+                case MSG_VAD_NOSPEECH:
+                    break;
+                case MSG_ERROR:
+                    break;
+                default:
+                    super.handleMessage(msg);
+                    break;
+            }
+        }
+    };
+    //<!==================================snow boy ,wake word ===========end >//
+
 
 
     // Alexa Auth 相关 -->begin

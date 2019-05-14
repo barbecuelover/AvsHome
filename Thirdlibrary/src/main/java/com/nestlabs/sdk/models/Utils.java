@@ -18,11 +18,13 @@
 package com.nestlabs.sdk.models;
 
 import android.os.Parcel;
-import android.support.annotation.NonNull;
+
 import android.text.TextUtils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import androidx.annotation.NonNull;
 
 /**
  * Provides utilities methods for various common operations within this library.

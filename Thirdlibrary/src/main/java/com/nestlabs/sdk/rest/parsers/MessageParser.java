@@ -1,6 +1,7 @@
 package com.nestlabs.sdk.rest.parsers;
 
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 public class MessageParser implements Parser {
 

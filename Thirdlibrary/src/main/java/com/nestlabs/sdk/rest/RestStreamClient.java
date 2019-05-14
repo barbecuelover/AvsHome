@@ -1,6 +1,6 @@
 package com.nestlabs.sdk.rest;
 
-import android.support.annotation.NonNull;
+
 
 import com.nestlabs.sdk.EventHandler;
 import com.nestlabs.sdk.ExceptionHandler;
@@ -11,6 +11,7 @@ import com.nestlabs.sdk.rest.parsers.ParserException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import androidx.annotation.NonNull;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
