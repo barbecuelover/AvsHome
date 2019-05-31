@@ -5,13 +5,13 @@
     <RelativeLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="12dp"
+        android:layout_height="6dp"
         android:orientation="vertical">
 
         <View
             android:id="@+id/alexa_indicator"
             android:layout_width="match_parent"
-            android:layout_height="12dp"
+            android:layout_height="6dp"
             android:layout_alignParentBottom="true">
 
         </View>
@@ -19,7 +19,7 @@
         <View
             android:id="@+id/alexa_other_indicator"
             android:layout_width="match_parent"
-            android:layout_height="12dp"
+            android:layout_height="6dp"
             android:layout_alignParentBottom="true">
 
         </View>

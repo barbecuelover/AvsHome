@@ -282,8 +282,8 @@ public class AlexaService {
         setDefaultSettings();
 
         /* Initialize snowBoy wakeWord*/
-//        wakeWordService = WakeWordService.getInstance(mContext);
-//        wakeWordService.init(handle);
+        wakeWordService = WakeWordService.getInstance(mContext);
+        wakeWordService.init(handle);
 
     }
 

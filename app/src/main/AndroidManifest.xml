@@ -17,6 +17,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:screenOrientation="landscape"
         android:theme="@style/AppTheme">
         <activity android:name=".settings.SettingsActivity"
             android:screenOrientation="landscape"/>
@@ -48,6 +49,27 @@
                     android:scheme="amzn" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".alexa.ui.BodyTemplate2Activity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".alexa.ui.WeatherActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".alexa.ui.ListTemplate1Activity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".alexa.ui.BodyTemplate1Activity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".alexa.ui.RenderPlayerInfoActivity"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTask" />
     </application>
 
 </manifest>

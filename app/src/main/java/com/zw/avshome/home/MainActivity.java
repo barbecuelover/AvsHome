@@ -217,11 +217,11 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
                 case "IDLE":
                     alexaIndicator.clearIndicator();
                     //Alexa 处理完动作后再次开始监听唤醒词。此逻辑导致 Alexa在Speaking回答指令时，无法唤醒Alexa
-                   // alexaService.startMonitoringWakeWord();
+                    alexaService.startMonitoringWakeWord();
                     break;
                 case "DISCONNECTED":
                     alexaIndicator.setIndicatorDisconnectedState();
-                  //  alexaService.stopMonitoringWakeWord();
+                    alexaService.stopMonitoringWakeWord();
                     break;
                 case "PENDING":
                     alexaIndicator.setIndicatorDisconnectedState();
@@ -229,7 +229,7 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
                 case "CONNECTED":
                     alexaIndicator.clearIndicator();
                     //alexa 登录成功后 开始监听 唤醒词
-                   // alexaService.startMonitoringWakeWord();
+                    alexaService.startMonitoringWakeWord();
                     break;
                 default:
                     alexaIndicator.clearIndicator();
