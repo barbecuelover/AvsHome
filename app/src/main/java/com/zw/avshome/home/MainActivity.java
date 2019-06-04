@@ -73,6 +73,7 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
     public void initData() {
         context = getActivity();
         alexaService = AlexaService.getInstance();
+        setAlexaClientListener();
         alexaService.start();
 
         alexaIndicator = AlexaIndicator.getInstance(this);
@@ -102,7 +103,7 @@ public class MainActivity extends ParentActivity implements View.OnClickListener
         btnAlexaLogin.setOnClickListener(this);
         btnPopWindow.setOnClickListener(this);
         btnWifiStatus.setOnClickListener(this);
-        setAlexaClientListener();
+
 
     }
 

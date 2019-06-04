@@ -105,13 +105,13 @@ public class ListTemplate1Activity extends ParentActivity {
                 if (title.has("mainTitle")) {
                     String mainTitle = title.getString("mainTitle");
                     mMainTitle.setText(mainTitle);
-                    mMainTitle.setTextSize(32);
+                    mMainTitle.setTextSize(22);
                 }
 
                 if (title.has("subTitle")) {
                     String subTitle = title.getString("subTitle");
                     mSubTitle.setText(subTitle);
-                    mSubTitle.setTextSize(32);
+                    mSubTitle.setTextSize(16);
                 }
             }
 
@@ -140,9 +140,9 @@ public class ListTemplate1Activity extends ParentActivity {
     private void insertListItem(String index, String content) {
         View contentItem = mInf.inflate(R.layout.card_list_template1_item_content, mContentList, false);
         ((TextView) contentItem.findViewById(R.id.content)).setText(content);
-        ((TextView) contentItem.findViewById(R.id.content)).setTextSize(54);
+        ((TextView) contentItem.findViewById(R.id.content)).setTextSize(28);
         ((TextView) contentItem.findViewById(R.id.index)).setText(index);
-        ((TextView) contentItem.findViewById(R.id.index)).setTextSize(40);
+        ((TextView) contentItem.findViewById(R.id.index)).setTextSize(20);
         contentItem.findViewById(R.id.guideline1).setBackgroundColor(getResources().getColor(R.color.cardListGuideLine));
 //        ((TextView) contentItem.findViewById(R.id.guideline2)).setBackgroundColor(getResources().getColor(R.color.cardListGuideLine));
         mContentList.addView(contentItem);

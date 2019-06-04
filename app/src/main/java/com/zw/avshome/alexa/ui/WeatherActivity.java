@@ -126,20 +126,20 @@ public class WeatherActivity extends ParentActivity {
                 if (title.has("mainTitle")) {
                     String mainTitle = title.getString("mainTitle");
                     mMainTitle.setText(mainTitle);
-                    mMainTitle.setTextSize(32);
+                    mMainTitle.setTextSize(18);
                 }
 
                 if (title.has("subTitle")) {
                     String subTitle = title.getString("subTitle");
                     mSubTitle.setText(subTitle);
-                    mSubTitle.setTextSize(32);
+                    mSubTitle.setTextSize(16);
                 }
             }
 
             if (template.has("currentWeather")) {
                 String currentWeather = template.getString("currentWeather");
                 mCurrentWeather.setText(currentWeather);
-                mCurrentWeather.setTextSize(260);
+                mCurrentWeather.setTextSize(90);
             }
 
             if (template.has("currentWeatherIcon")) {
@@ -152,14 +152,14 @@ public class WeatherActivity extends ParentActivity {
                 String highTempValue =
                         template.getJSONObject("highTemperature").getString("value");
                 mHighTempCurrent.setText(highTempValue);
-                mHighTempCurrent.setTextSize(80);
+                mHighTempCurrent.setTextSize(36);
             }
 
             if (template.has("lowTemperature")) {
                 String lowTempValue =
                         template.getJSONObject("lowTemperature").getString("value");
                 mLowTempCurrent.setText(lowTempValue);
-                mLowTempCurrent.setTextSize(80);
+                mLowTempCurrent.setTextSize(36);
             }
 
 
@@ -179,19 +179,19 @@ public class WeatherActivity extends ParentActivity {
                         // Set day
                         String day = next.has("day") ? next.getString("day") : "";
                         ((TextView) forecastView.findViewById(R.id.day)).setText(day);
-                        ((TextView) forecastView.findViewById(R.id.day)).setTextSize(32);
+                        ((TextView) forecastView.findViewById(R.id.day)).setTextSize(16);
 
                         // Set high temp
                         String high = next.has("highTemperature")
                                 ? next.getString("highTemperature") : "";
                         ((TextView) forecastView.findViewById(R.id.highTemp)).setText(high);
-                        ((TextView) forecastView.findViewById(R.id.highTemp)).setTextSize(32);
+                        ((TextView) forecastView.findViewById(R.id.highTemp)).setTextSize(16);
 
                         // Set low temp
                         String low = next.has("lowTemperature")
                                 ? next.getString("lowTemperature") : "";
                         ((TextView) forecastView.findViewById(R.id.lowTemp)).setText(low);
-                        ((TextView) forecastView.findViewById(R.id.lowTemp)).setTextSize(32);
+                        ((TextView) forecastView.findViewById(R.id.lowTemp)).setTextSize(16);
 
                     }
 

@@ -234,19 +234,19 @@ public class AlexaService {
         )
             throw new RuntimeException("Could not register TemplateRuntime platform interface");
 
-        // Alerts
-        if (!mEngine.registerPlatformInterface(
-                mAlerts = new AlertsHandler(
-                        mContext,
-                        new MediaPlayerHandler(
-                                mContext,
-                                "Alerts",
-                                Speaker.Type.AVS_ALERTS,
-                                null
-                        )
-                )
-        )
-        ) throw new RuntimeException("Could not register Alerts platform interface");
+//        // Alerts
+//        if (!mEngine.registerPlatformInterface(
+//                mAlerts = new AlertsHandler(
+//                        mContext,
+//                        new MediaPlayerHandler(
+//                                mContext,
+//                                "Alerts",
+//                                Speaker.Type.AVS_ALERTS,
+//                                null
+//                        )
+//                )
+//        )
+//        ) throw new RuntimeException("Could not register Alerts platform interface");
 
 
         // AuthProvider
@@ -445,82 +445,82 @@ public class AlexaService {
         });
 
 
-        /**
-         * Alert  Notification Alarm
-         */
-        mAlerts.setAlertListener(new AlertListener() {
-            @Override
-            public void setAlertCreateListener(String alertToken, String detailedInfo) {
-                try {
-                    String tmp = detailedInfo.replace("\\/", "/");
-                    JSONObject mTemplate = new JSONObject(tmp);
-                    Log.d(TAG, mTemplate.toString());
-
-                    String timer = mTemplate.getString("time");
-                    String type = mTemplate.getString("type");
-                    switch (type) {
-                        case "TIMER":
-//                            if (!alertToken.equals(mCurrentAlertToken)) {
-//                                mCurrentAlertToken = alertToken;
-//                                /*500mm is for Reduce error*/
-//                                long times = TimeUtil.getBetween(stringToLong(timer), System.currentTimeMillis() - 500);
-//                                TimerInfo timerInfo = new TimerInfo(alertToken, timer, (int) times);
-//                                Log.d(TAG, alertToken);
-//                                timerInfoDBUtils.saveInfo(timerInfo);
-//                            }
-//                            EventBus.getDefault().post(new RefreshTimerMessage());
-//                            mContext.startActivity(AlertTimerActivity.createIntent(mContext));
-                            Log.d(TAG, "timer activity created");
-                            break;
-                        case "REMINDER":
-//                            try {
-//                                if (!alertToken.equals(mCurrentAlertToken)) {
-//                                    mCurrentAlertToken = alertToken;
-//                                    String reminderTime = mTemplate.getString("time");
-//                                    String reminderContent = mTemplate.getString("label");
-//                                    RemindInfo remindInfo = new RemindInfo(alertToken, reminderTime, reminderContent);
-//                                    remindInfoDBUtils.saveInfo(remindInfo);
-//                                    mContext.startActivity(AlertReminderActivity.createIntent(mContext));
-//                                    Log.d(TAG, "reminder activity created");
-//                                }
-//                            } catch (Exception e) {
-//                                e.printStackTrace();
-//                            }
-//                            EventBus.getDefault().post(new RefreshTimerMessage());
-                            break;
-                        case "ALARM":
-//                            if (!alertToken.equals(mCurrentAlertToken)) {
-//                                mCurrentAlertToken = alertToken;
-//                                String alarmTime = mTemplate.getString("time");
-//                                AlarmInfo alarmInfo = new AlarmInfo(alertToken, alarmTime);
-//                                alarmInfoDBUtils.saveInfo(alarmInfo);
-//                                mContext.startActivity(AlertAlarmActivity.createIntent(mContext));
-//                                Log.d(TAG, "alarm activity created");
-//                            }
-//                            EventBus.getDefault().post(new RefreshTimerMessage());
-                            break;
-                        default:
-                            break;
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void setAlertDeleteListener(String alertToken) {
-//                timerInfoDBUtils.deleteInfo(alertToken);
-//                remindInfoDBUtils.deleteInfo(alertToken);
-//                alarmInfoDBUtils.deleteInfo(alertToken);
-//                EventBus.getDefault().post(new RefreshTimerMessage());
-//                Log.d(TAG, alertToken + " : alert deleted!!!");
-            }
-
-            @Override
-            public void setAlertStateChangeListener(String alertToken, Alerts.AlertState state, String reason) {
-
-            }
-        });
+//        /**
+//         * Alert  Notification Alarm
+//         */
+//        mAlerts.setAlertListener(new AlertListener() {
+//            @Override
+//            public void setAlertCreateListener(String alertToken, String detailedInfo) {
+//                try {
+//                    String tmp = detailedInfo.replace("\\/", "/");
+//                    JSONObject mTemplate = new JSONObject(tmp);
+//                    Log.d(TAG, mTemplate.toString());
+//
+//                    String timer = mTemplate.getString("time");
+//                    String type = mTemplate.getString("type");
+//                    switch (type) {
+//                        case "TIMER":
+////                            if (!alertToken.equals(mCurrentAlertToken)) {
+////                                mCurrentAlertToken = alertToken;
+////                                /*500mm is for Reduce error*/
+////                                long times = TimeUtil.getBetween(stringToLong(timer), System.currentTimeMillis() - 500);
+////                                TimerInfo timerInfo = new TimerInfo(alertToken, timer, (int) times);
+////                                Log.d(TAG, alertToken);
+////                                timerInfoDBUtils.saveInfo(timerInfo);
+////                            }
+////                            EventBus.getDefault().post(new RefreshTimerMessage());
+////                            mContext.startActivity(AlertTimerActivity.createIntent(mContext));
+//                            Log.d(TAG, "timer activity created");
+//                            break;
+//                        case "REMINDER":
+////                            try {
+////                                if (!alertToken.equals(mCurrentAlertToken)) {
+////                                    mCurrentAlertToken = alertToken;
+////                                    String reminderTime = mTemplate.getString("time");
+////                                    String reminderContent = mTemplate.getString("label");
+////                                    RemindInfo remindInfo = new RemindInfo(alertToken, reminderTime, reminderContent);
+////                                    remindInfoDBUtils.saveInfo(remindInfo);
+////                                    mContext.startActivity(AlertReminderActivity.createIntent(mContext));
+////                                    Log.d(TAG, "reminder activity created");
+////                                }
+////                            } catch (Exception e) {
+////                                e.printStackTrace();
+////                            }
+////                            EventBus.getDefault().post(new RefreshTimerMessage());
+//                            break;
+//                        case "ALARM":
+////                            if (!alertToken.equals(mCurrentAlertToken)) {
+////                                mCurrentAlertToken = alertToken;
+////                                String alarmTime = mTemplate.getString("time");
+////                                AlarmInfo alarmInfo = new AlarmInfo(alertToken, alarmTime);
+////                                alarmInfoDBUtils.saveInfo(alarmInfo);
+////                                mContext.startActivity(AlertAlarmActivity.createIntent(mContext));
+////                                Log.d(TAG, "alarm activity created");
+////                            }
+////                            EventBus.getDefault().post(new RefreshTimerMessage());
+//                            break;
+//                        default:
+//                            break;
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            @Override
+//            public void setAlertDeleteListener(String alertToken) {
+////                timerInfoDBUtils.deleteInfo(alertToken);
+////                remindInfoDBUtils.deleteInfo(alertToken);
+////                alarmInfoDBUtils.deleteInfo(alertToken);
+////                EventBus.getDefault().post(new RefreshTimerMessage());
+////                Log.d(TAG, alertToken + " : alert deleted!!!");
+//            }
+//
+//            @Override
+//            public void setAlertStateChangeListener(String alertToken, Alerts.AlertState state, String reason) {
+//
+//            }
+//        });
 
     }
 

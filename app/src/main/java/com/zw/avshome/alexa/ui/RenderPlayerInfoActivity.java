@@ -311,9 +311,9 @@ public class RenderPlayerInfoActivity extends ParentActivity implements View.OnC
         }
 
         mEndTime.setText(stringForTime((int) duration));
-        mEndTime.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+        mEndTime.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         mProgressTime.setText(stringForTime((int) position));
-        mProgressTime.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+        mProgressTime.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
 
         return position;
     }
@@ -491,27 +491,27 @@ public class RenderPlayerInfoActivity extends ParentActivity implements View.OnC
                 mHeader.setVisibility(View.GONE);
             } else {
                 mHeader.setText(header);
-                mDivider.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
-                mHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
+                mDivider.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+                mHeader.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
             }
 
             if (header.equals("iHeartCountry Classics")) {
                 mHeaderSubtext1.setVisibility(View.GONE);
                 mTitle.setText(header);
                 mTitleSubtext1.setText(headerSubtext1);
-                mTitleSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
-                mTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 54);
+                mTitleSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+                mTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 28);
             } else {
                 mTitle.setText(title);
                 mTitleSubtext1.setText(titleSubtext1);
-                mTitleSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
-                mTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 54);
+                mTitleSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+                mTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 28);
                 mHeaderSubtext1.setText(headerSubtext1);
-                mHeaderSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
+                mHeaderSubtext1.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
             }
 
             mTitleSubtext2.setText(titleSubtext2);
-            mTitleSubtext2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 32);
+            mTitleSubtext2.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
 
             String url = getImageUrl(sources);
             downloadImage(mArt, url);

@@ -117,20 +117,20 @@ public class BodyTemplate2Activity extends ParentActivity {
                 if (title.has("mainTitle")) {
                     String mainTitle = title.getString("mainTitle");
                     mMainTitle.setText(mainTitle);
-                    mMainTitle.setTextSize(32);
+                    mMainTitle.setTextSize(22);
                 }
 
                 if (title.has("subTitle")) {
                     String subTitle = title.getString("subTitle");
                     mSubTitle.setText(subTitle);
-                    mSubTitle.setTextSize(32);
+                    mSubTitle.setTextSize(16);
                 }
             }
 
             if (template.has("textField")) {
                 String textField = template.getString("textField");
                 mTextField.setText(textField);
-                mTextField.setTextSize(32);
+                mTextField.setTextSize(16);
             }
 
             if (template.has("image")) {

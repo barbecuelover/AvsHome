@@ -262,8 +262,8 @@
 
     <ImageView
         android:id="@+id/art"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal2"
         app:layout_constraintEnd_toStartOf="@id/guidelineRightMargin"
@@ -272,8 +272,8 @@
 
     <ImageView
         android:id="@+id/partnerLogo"
-        android:layout_width="150dp"
-        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/art"
         app:layout_constraintEnd_toStartOf="@id/guidelineRightMargin"
@@ -283,8 +283,8 @@
 
     <ToggleButton
         android:id="@+id/left_play_pause_btn2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_left2"
         android:gravity="start"
         android:textOff=""
@@ -296,8 +296,8 @@
 
     <ToggleButton
         android:id="@+id/left_play_pause_btn11"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_left1"
         android:textOff=""
         android:textOn=""
@@ -308,8 +308,8 @@
 
     <Button
         android:id="@+id/left_play_pause_btn1"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_left1"
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal06"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical3"
@@ -318,8 +318,8 @@
 
     <ToggleButton
         android:id="@+id/playpause_btn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:background="@drawable/control_btn_play_pause"
         android:textOff=""
         android:textOn=""
@@ -330,8 +330,8 @@
 
     <Button
         android:id="@+id/right_play_pause_btn1"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_right1"
         app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal06"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical7"
@@ -340,8 +340,8 @@
 
     <ToggleButton
         android:id="@+id/right_play_pause_btn11"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_right1"
         android:textOff=""
         android:textOn=""
@@ -352,8 +352,8 @@
 
     <ToggleButton
         android:id="@+id/right_play_pause_btn2"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:background="@drawable/control_btn_playpause_right2"
         android:gravity="end"
         android:textOff=""

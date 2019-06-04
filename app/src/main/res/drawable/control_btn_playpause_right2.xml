@@ -5,7 +5,7 @@
 
     <item
         android:maxLevel="0"
-        android:drawable="@null" />
+        android:drawable="@drawable/null_drawable" />
     <item
         android:maxLevel="1"
         android:drawable="@drawable/control_btn_shuffle" />
