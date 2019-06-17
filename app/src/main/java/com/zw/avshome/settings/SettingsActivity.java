@@ -10,9 +10,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.AlexaService;
-import com.zw.avshome.home.base.ParentActivity;
-import com.zw.avshome.home.base.ParentFragment;
-import com.zw.avshome.settings.bean.SettingItemAdapter;
+import com.zw.avshome.base.ParentActivity;
+import com.zw.avshome.base.ParentFragment;
+import com.zw.avshome.settings.adapter.SettingItemAdapter;
 import com.zw.avshome.home.views.BlurringView;
 import com.zw.avshome.utils.NetWorkUtil;
 

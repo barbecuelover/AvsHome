@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zw.avshome.R;
-import com.zw.avshome.home.base.ParentFragment;
-import com.zw.avshome.settings.bean.ThemeItemAdapter;
+import com.zw.avshome.base.ParentFragment;
+import com.zw.avshome.settings.adapter.ThemeItemAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

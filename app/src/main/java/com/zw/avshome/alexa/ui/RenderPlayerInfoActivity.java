@@ -18,7 +18,7 @@ import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
 
-import com.zw.avshome.home.base.ParentActivity;
+import com.zw.avshome.base.ParentActivity;
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.util.DownloadImageTask;
 import com.zw.avshome.alexa.util.MediaPlayerStateMessage;

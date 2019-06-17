@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.zw.avshome.home.base.ParentActivity;
+import com.zw.avshome.base.ParentActivity;
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.util.DownloadImageTask;
 import com.zw.avshome.alexa.interfaces.ClearTemplateListener;

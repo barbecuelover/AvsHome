@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 
-import com.zw.avshome.home.base.ParentActivity;
+import com.zw.avshome.base.ParentActivity;
 import com.zw.avshome.R;
 import com.zw.avshome.alexa.interfaces.ClearTemplateListener;
 import com.zw.avshome.alexa.AlexaService;

@@ -28,7 +28,7 @@ public abstract class BaseDevice implements Serializable {
 
     public abstract  void initSelf();
     public abstract String getReportJsonData();
-    public abstract void startDeviceDetailActivity(Context context, View view);
+    public abstract void startDeviceDetailActivity(Context context);
 
 
     public String getIp() {

@@ -1,4 +1,4 @@
-package com.zw.avshome.settings.bean;
+package com.zw.avshome.settings.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

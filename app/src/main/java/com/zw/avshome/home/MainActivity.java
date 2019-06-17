@@ -19,7 +19,7 @@ import com.zw.avshome.alexa.AlexaService;
 import com.zw.avshome.alexa.interfaces.ClientConnectStateListener;
 import com.zw.avshome.alexa.interfaces.StateChangeListener;
 import com.zw.avshome.alexa.ui.AlexaIndicator;
-import com.zw.avshome.home.base.ParentActivity;
+import com.zw.avshome.base.ParentActivity;
 import com.zw.avshome.home.views.FragmentViewPager;
 import com.zw.avshome.settings.SettingsActivity;
 

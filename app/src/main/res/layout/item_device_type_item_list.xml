@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/item_device_container"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:longClickable="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_blurring_view">
+
+        <ImageView
+            android:id="@+id/item_device_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher_round" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/item_device_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="Philips Hue"
+        android:textColor="#FFF7F7F7"
+        android:textSize="15sp" />
+
+</LinearLayout>

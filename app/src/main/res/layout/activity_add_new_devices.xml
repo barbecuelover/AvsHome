@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <com.zw.avshome.home.views.BlurringView
+        android:id="@+id/add_new_device_bg_blur_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:blurRadius="1"
+        app:downsampleFactor="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:overlayColor="#55FFFFFF"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="42dp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_new_device_bg_card_view_1"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp"
+        app:layout_constraintLeft_toRightOf="@+id/gl_leftside1"
+        app:layout_constraintRight_toLeftOf="@id/gl_rightside1"
+        app:layout_constraintTop_toBottomOf="@id/gl_topside" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_new_device_bg_card_view_2"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp"
+        app:layout_constraintLeft_toRightOf="@+id/gl_leftside2"
+        app:layout_constraintRight_toLeftOf="@id/gl_rightside2"
+        app:layout_constraintTop_toBottomOf="@id/gl_topside" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_new_device_bg_card_view_3"
+        android:visibility="invisible"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp"
+        app:layout_constraintLeft_toRightOf="@+id/gl_leftside3"
+        app:layout_constraintRight_toLeftOf="@id/gl_rightside3"
+        app:layout_constraintTop_toBottomOf="@id/gl_topside" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/add_new_device_card_view_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="@color/blue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/gl_bottomside"
+        app:layout_constraintLeft_toRightOf="@+id/gl_leftside4"
+        app:layout_constraintRight_toLeftOf="@id/gl_rightside4"
+        app:layout_constraintTop_toBottomOf="@id/gl_topside">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/add_new_device_card_view_title"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="Add new device"
+                android:textColor="@color/colorTextCommon"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--Content-->
+                <FrameLayout
+                    android:id="@+id/fl_setting_content_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <!--左侧按钮-->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/add_new_device_left_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginBottom="28dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="21dp"
+                            app:cardElevation="8dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@mipmap/settings_left_btn_" />
+
+                        </androidx.cardview.widget.CardView>
+                        <!--右侧按钮-->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/add_new_device_right_btn"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="28dp"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="21dp"
+                            android:visibility="invisible"
+                            app:cardElevation="8dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="invisible"
+                                android:background="@mipmap/settings_right_btn_" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!--中间布局-->
+                        <FrameLayout
+                            android:id="@+id/add_new_device_fragment_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="96dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_marginRight="96dp"
+                            android:layout_marginBottom="18dp">
+
+                        </FrameLayout>
+
+
+                    </RelativeLayout>
+                </FrameLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_topside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_bottomside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_leftside1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_leftside2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.235" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_leftside3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_leftside4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.205" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.765" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_rightside4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.795" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

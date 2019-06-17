@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.zw.avshome.R;
-import com.zw.avshome.home.base.ParentFragment;
+import com.zw.avshome.base.ParentFragment;
 import com.zw.avshome.home.bean.Weather;
 import com.zw.avshome.home.bean.WeatherRequestInterface;
 
@@ -55,7 +55,7 @@ public class HomeFragment extends ParentFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
-        view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home_main, container, false);
         initView();
         initData();
         initEvent();
